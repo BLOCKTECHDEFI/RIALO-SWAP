@@ -50,6 +50,7 @@ body {
   margin-left: 10px;
   display: inline-block;
   margin-top: 3px;
+  color: white;
 }
 .logo:visited {
   color: #fff;
