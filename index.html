@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rialo Swap | Internet-Scale Liquidity</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-container">
+      <nav class="navbar">
+        <div>
+          <!-- <a href="index.html">
+            <img src="img/rialo.png" class="rialo-logo" />
+          </a> -->
+          <img
+            src="img/rialo.png"
+            class="rialo-logo"
+            onclick="window.location.href='index.html';"
+          />
+          <a href="index.html" class="logo"> RIALO SWAP </a>
+        </div>
+
+        <div class="nav-links">
+          <a href="https://x.com/BLOCKTECHDEFI">BLOCKTECH</a>
+          <a href="#" target="_blank" class="docs">Docs</a>
+          <a href="swap.html" target="_blank"
+            ><button class="btn-nav">Launch App</button></a
+          >
+        </div>
+      </nav>
+
+      <header class="hero">
+        <div class="hero-container">
+          <div class="badge">Next-Gen Layer 1 Architecture</div>
+          <h1><img src="img/design1.png" class="design1" /></h1>
+          <p>
+            The premier DEX for the Rialo L1<br />
+            with decentralized security and instant finality
+          </p>
+
+          <div class="hero-btns">
+            <button class="btn-main" onclick="window.location.href='swap.html'">
+              Start Swapping
+            </button>
+            <a href="https://www.rialo.io/" target="_blank">
+              <button class="btn-outline">Explore Ecosystem</button></a
+            >
+          </div>
+        </div>
+      </header>
+
+      <div class="bgdesign">
+        <img src="img/bgchart.png" />
+      </div>
+      <div class="pulse-ticker">
+        <div class="ticker-track">
+          <span>24H VOL: $1,240,552</span>
+          <span>TVL: $45.8M</span>
+          <span>LATEST SWAP: 500 $RIALO → 2.4 SOL (0.4s ago)</span>
+          <span>GAS: 0.0001 $RIALO </span>
+          <span>24H VOL: $1,240,552</span>
+          <span>TVL: $45.8M</span>
+        </div>
+      </div>
+
+      <section class="features">
+        <div class="feature-card">
+          <h3>Subzero Speed</h3>
+          <p>
+            Built on event-driven architecture for instant transaction finality
+            and no lag.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure by Design</h3>
+          <p>
+            Audited smart contracts running on high-performance RISC-V virtual
+            machines.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Universal Access</h3>
+          <p>
+            Seamlessly swap between Rialo native assets and Solana-compatible
+            tokens.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div id="token-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Select a token</h3>
+          <button
+            id="close-token-modal"
+            style="
+              background: none;
+              border: none;
+              color: white;
+              font-size: 24px;
+              cursor: pointer;
+            "
+          >
+            &times;
+          </button>
+        </div>
+
+        <div
+          class="token-list"
+          style="
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          "
+        >
+          <button
+            class="token-option-btn"
+            data-symbol="RIALO"
+            data-img="img/Rialotoken.png"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              padding: 10px;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              cursor: pointer;
+              color: white;
+              text-align: left;
+            "
+          >
+            <img src="img/Rialotoken.png" style="width: 32px; height: 32px" />
+            <div>
+              <strong style="display: block">RIALO</strong>
+              <small style="color: #888">Rialo Network</small>
+            </div>
+          </button>
+
+          <button
+            class="token-option-btn"
+            data-symbol="USDC"
+            data-img="img/usdc.png"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              padding: 10px;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              cursor: pointer;
+              color: white;
+              text-align: left;
+            "
+          >
+            <img src="img/usdc.png" style="width: 32px; height: 32px" />
+            <div>
+              <strong style="display: block">USDC</strong>
+              <small style="color: #888">USD Coin</small>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

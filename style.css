@@ -1,0 +1,636 @@
+:root {
+  --bg-dark: #000000;
+  --card-bg: #000000;
+  --primary: #a9ddd3; /* Icy Teal */
+  --text-main: #000000;
+  --text-muted: #94a3b8;
+  --accent-glow: #000000;
+  --border: #1e293b;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.page-container {
+  /* border: 5px solid rgb(255, 255, 255); */
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  width: 99.3%;
+  top: 0;
+  /* background-color: blue; */
+  margin-top: 0px;
+  /* background-color: rgb(0, 0, 0); */
+  padding: 10px 5px;
+  /* border-bottom: 0.5px solid white; */
+  z-index: 1000;
+  /* backdrop-filter: blur(12px); */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+}
+
+.logo:link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-left: 10px;
+  display: inline-block;
+  margin-top: 3px;
+}
+.logo:visited {
+  color: #fff;
+}
+.logo:active {
+  color: #fff;
+}
+.logo span {
+  color: var(--primary);
+}
+.rialo-logo {
+  height: 25px;
+
+  /* margin-top: 8px; */
+  margin-left: 9px;
+}
+/* .relative-parents {
+  position: relative;
+  width: 1000px;
+} */
+.nav-links {
+  /* background-color: red; */
+  position: absolute;
+  right: 8px;
+  /* top: 16px; */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+.nav-links a:active {
+  color: rgb(255, 255, 255);
+}
+
+.design1 {
+  width: 500px;
+  opacity: 0.7;
+}
+
+/* .bgdesign img {
+  width: 1200px;
+  height: 1100px;
+  position: absolute;
+  left: 0;
+
+  z-index: -1;
+  bottom: -300px;
+} */
+.bgdesign img {
+  /* Size stays locked at 67% of the screen width */
+  width: 75vw;
+  height: 650px; /* Maintains aspect ratio based on the 67vw width */
+
+  /* Positioning */
+  position: absolute;
+  left: 0;
+  bottom: -140px; /* Keeps your specific "spot" at the bottom */
+
+  /* Housekeeping */
+  z-index: -1;
+  /* pointer-events: none; Crucial: lets you click "through" the image to hit buttons */
+  /* max-width: none; Prevents other styles from overriding the 67vw */
+}
+
+/* Ensure the parent can hold the absolute image */
+
+/* Hero Section */
+.hero {
+  padding: 100px 5%;
+  text-align: center;
+  background: radial-gradient(
+    circle at center,
+    var(--accent-glow) 0%,
+    transparent 70%
+  );
+}
+
+.badge {
+  background: rgba(45, 212, 191, 0.1);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--primary);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #2dd4bf, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-main {
+  background: var(--primary);
+  color: var(--bg-dark);
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--accent-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--border);
+  padding: 1rem 2.5rem;
+  margin-left: 1rem;
+}
+.btn-outline:hover {
+  border: 1px solid #a9ddd3;
+}
+
+.btn-nav {
+  background: #1e293b;
+  color: white;
+  padding: 0.6rem 1.2rem;
+}
+.btn-nav:hover {
+  color: #a9ddd3;
+}
+
+/* Pulse Ticker */
+.pulse-ticker {
+  background: #0f172a;
+  padding: 15px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 4rem;
+  animation: scroll 30s linear infinite;
+}
+
+.ticker-track span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 80px 10%;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.feature-card:hover {
+  border-color: #a9ddd3;
+  transform: translateY(-10px);
+}
+
+.feature-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* DOCS.html */
+.coming-soon {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 16;
+  font-size: 50px;
+  font-style: italic;
+  margin-right: 30px;
+}
+
+/* Swap.html */
+.swap-parent {
+  /* background-color: red; */
+  width: 700px;
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.swap-section {
+  background-color: #000000;
+  height: 700px;
+  width: 700px;
+  position: absolute;
+  right: 0;
+  bottom: 19px;
+  border-radius: 10px;
+  padding: 20px 20px;
+  border: 2px solid #a9ddd3;
+}
+.buy-section,
+.sell-section {
+  height: 200px;
+  background-color: rgb(39, 39, 39);
+  border: 1px solid #a9ddd3;
+  border-radius: 10px;
+}
+.buy-section {
+  margin-bottom: 50px;
+}
+.sell-section {
+}
+.switch-token {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 300px;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: #e8e3d5;
+}
+.swap-btn {
+  text-align: center;
+  padding: 20px;
+  width: 657px;
+  margin-left: 2px;
+  margin-top: 20px;
+  font-size: 25px;
+  background-color: #e8e3d5;
+  border-radius: 15px;
+}
+.swap-btn:hover {
+  background-color: #9ec7be;
+}
+.buy-section,
+.sell-section {
+  position: relative;
+}
+.buy-contents .buy,
+.placeholder,
+.dollars,
+.rialo-token,
+h2,
+.sol,
+.sol-text {
+  position: absolute;
+}
+.buy-contents .buy {
+  font-size: 18px;
+  margin-left: 10px;
+  top: 5px;
+  color: #fff;
+}
+.buy-contents .placeholder {
+  bottom: 80px;
+  background-color: rgb(39, 39, 39);
+  border: none;
+  font-weight: bold;
+  padding: 0px 5px;
+  padding-top: 27px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  margin-left: 10px;
+  width: 400px;
+  color: white;
+  font-size: 30px;
+}
+.placeholder::placeholder {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  border: none;
+}
+.placeholder:focus {
+  outline: none;
+  /* Some browsers also use box-shadow for focus rings */
+  box-shadow: none;
+}
+.buy-contents .dollars {
+  bottom: 10px;
+  font-size: 17px;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.buy-contents .rialo-token {
+  left: 430px;
+  bottom: 85px;
+  width: 60px;
+  border-radius: 40px;
+}
+.buy-contents h2 {
+  left: 500px;
+  bottom: 110px;
+  color: #fff;
+}
+.buy-contents .sol {
+  left: 468px;
+  bottom: 83px;
+  width: 28px;
+  border-radius: 9px;
+}
+.buy-contents .sol-text {
+  left: 500px;
+  bottom: 89px;
+  color: #fff;
+}
+.buy-contents .me {
+  background-color: rgb(71, 71, 71);
+  border: 1px solid #94a3b8;
+  height: 100px;
+  width: 230px;
+  margin-left: 410px;
+  margin-top: 35px;
+  border-radius: 70px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Modal Overlay */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #0d0d0d;
+  border: 1px solid var(--primary);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+/* Wallet Buttons */
+.wallet-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wallet-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border-radius: 12px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.wallet-option:hover {
+  background: #262626;
+  border-color: var(--primary);
+}
+
+.wallet-option img {
+  width: 30px;
+  height: 30px;
+}
+
+#close-modal {
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.wallet-option span {
+  color: #fff;
+}
+.modal-header h3 {
+  color: #fff;
+  margin-left: 10px;
+}
+/* This makes the container a flexbox so we can reorder children */
+
+/* Default order */
+.buy-section {
+  order: 1;
+}
+.switch-token {
+  order: 2;
+}
+.sell-section {
+  order: 3;
+}
+
+/* When we add this class, the order flips */
+.swap-section.swapped .buy-section {
+  order: 3;
+}
+.swap-section.swapped .sell-section {
+  order: 1;
+}
+
+/* toast */
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Toast */
+.toast {
+  min-width: 250px;
+  padding: 16px 20px;
+  background: #1a1a1a;
+  color: white;
+  border-radius: 12px;
+  border-left: 4px solid #a9ddd3; /* Rialo Green */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Success/Error Variants */
+.toast.success {
+  border-left-color: #a9ddd3;
+}
+.toast.error {
+  border-left-color: #ff6b6b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+/* Custom Confirm Overlay */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.confirm-box {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #333;
+  max-width: 350px;
+}
+.confirm-box p {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+.confirm-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.confirm-btns button {
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+#confirm-yes {
+  background: #a9ddd3;
+  color: black;
+}
+#confirm-no {
+  background: #333;
+  color: white;
+}

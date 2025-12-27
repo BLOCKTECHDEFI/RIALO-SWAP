@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rialo Swap | Internet-Scale Liquidity</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-container">
+      <nav class="navbar">
+        <div>
+          <img
+            src="img/rialo.png"
+            class="rialo-logo"
+            onclick="window.location.href='index.html';"
+          />
+          <a href="index.html" class="logo"> RIALO SWAP </a>
+        </div>
+
+        <div class="nav-links">
+          <a href="https://x.com/BLOCKTECHDEFI">BLOCKTECH</a>
+          <a href="#">Docs</a>
+          <button class="btn-nav" id="connect-btn">Connect wallet</button>
+        </div>
+      </nav>
+
+      <div class="swap-parent">
+        <div class="swap-section">
+          <div class="buy-section">
+            <div class="buy-contents">
+              <!-- <p class="buy">Buy</p> -->
+              <input type="number" placeholder="0" class="placeholder" />
+              <p class="dollars">$0.00</p>
+
+              <button class="me">
+                <img src="img/Rialotoken.png" class="rialo-token" />
+                <h2>RIALO</h2>
+                <img src="img/sol.jpg" class="sol" />
+                <p class="sol-text">Solana</p>
+              </button>
+            </div>
+          </div>
+          <button class="switch-token">⇅</button>
+          <div class="sell-section">
+            <div class="buy-contents">
+              <!-- <p class="buy">Sell</p> -->
+              <input type="number" placeholder="0" class="placeholder" />
+              <p class="dollars">$0.00</p>
+
+              <button class="me">
+                <img src="img/usdc.png" class="rialo-token" />
+                <h2>USDC</h2>
+                <img src="img/sol.jpg" class="sol" />
+                <p class="sol-text">Solana</p>
+              </button>
+            </div>
+          </div>
+          <button class="swap-btn">SWAP</button>
+        </div>
+        <div id="wallet-modal" class="modal-overlay">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Select Wallet</h3>
+              <button id="close-modal">&times;</button>
+            </div>
+            <p class="modal-subtitle">
+              Ensure your wallet is set to
+              <strong>Solana Devnet/Testnet</strong> for safety.
+            </p>
+
+            <div class="wallet-grid">
+              <button class="wallet-option" data-wallet="phantom">
+                <img src="img/phantom.jpg" alt="Phantom" />
+                <span>Phantom</span>
+              </button>
+              <button class="wallet-option" data-wallet="solflare">
+                <img src="img/solflare.jpg" alt="Solflare" />
+                <span>Solflare</span>
+              </button>
+              <button class="wallet-option" data-wallet="metamask">
+                <img src="img/metamask.jpg" alt="MetaMask" />
+                <span>MetaMask</span>
+              </button>
+              <button class="wallet-option" data-wallet="rabby">
+                <img src="img/rabby.jpg" alt="Rabby" /> <span>Rabby</span>
+              </button>
+              <button class="wallet-option" data-wallet="zerion">
+                <img src="img/zerion.jpg" alt="Zerion" /> <span>Zerion</span>
+              </button>
+              <button class="wallet-option" data-wallet="okx">
+                <img src="img/okx.jpg" alt="okx" /> <span>Okx</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="script.js"></script>
+    <div id="toast-container"></div>
+  </body>
+</html>
