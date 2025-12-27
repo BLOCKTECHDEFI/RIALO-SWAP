@@ -1,3 +1,13 @@
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  // Optionally redirect them to a specific mobile page
+  // window.location.href = "mobile.html";
+  console.log("Mobile device detected - Interface restricted.");
+}
+
 // 1. SELECT ELEMENTS
 const connectBtn = document.querySelector(".btn-nav");
 const modal = document.getElementById("wallet-modal");

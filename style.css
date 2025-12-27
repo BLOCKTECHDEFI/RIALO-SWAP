@@ -633,3 +633,52 @@ input::-webkit-inner-spin-button {
   background: #333;
   color: white;
 }
+
+/* mobile blocker */
+
+/* 1. Hide the blocker by default (Desktop view) */
+#mobile-blocker {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b; /* Matches your dark theme */
+  z-index: 99999; /* Higher than everything else */
+  color: white;
+  text-align: center;
+  padding: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+#mobile-blocker h1 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+#mobile-blocker h2 {
+  color: #a9ddd3;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+#mobile-blocker p {
+  color: #888;
+  line-height: 1.6;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* 2. Show the blocker on screens smaller than 1024px */
+@media screen and (max-width: 1024px) {
+  #mobile-blocker {
+    display: flex;
+  }
+
+  /* Hide the rest of the site's main content to prevent scrolling */
+  body {
+    overflow: hidden;
+  }
+}
