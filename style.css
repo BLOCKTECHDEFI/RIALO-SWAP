@@ -58,9 +58,7 @@ body {
 .logo:active {
   color: #fff;
 }
-.logo span {
-  color: var(--primary);
-}
+
 .rialo-logo {
   height: 25px;
 
